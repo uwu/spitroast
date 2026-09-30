@@ -50,7 +50,7 @@ export default <T extends PatchType>(patchType: T) =>
         // @ts-expect-error this is manual minification. if you don't like it, kick rocks.
         get: (target, prop, receiver, resolvedProp) =>
           ((resolvedProp = Reflect.get(target, prop, receiver)),
-          (typeof resolvedProp)[0] == "f")
+          resolvedProp == unpatch.toString // Function.prototype.toString with less chars
             ? resolvedProp.bind(origFunc)
             : resolvedProp,
       });
