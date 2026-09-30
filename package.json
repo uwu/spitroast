@@ -1,6 +1,6 @@
 {
   "name": "spitroast",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "A simple JavaScript function patcher.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
