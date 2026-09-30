@@ -52,7 +52,7 @@ export default <T extends PatchType>(patchType: T) =>
           ((resolvedProp = Reflect.get(target, prop, receiver)),
           resolvedProp == unpatch.toString // Function.prototype.toString with less chars
             ? resolvedProp.bind(origFunc)
-            : resolvedProp,
+            : resolvedProp),
       });
 
       const runHook: any = (ctxt: any, args: unknown[], construct: boolean) =>
